@@ -1,0 +1,25 @@
+server:
+  ssl:
+    enabled: true
+    key-store-type: PKCS12
+    key-store: keystore.p12
+    key-alias: tomcat
+    key-store-password: qweasd
+  port: 8443
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+
+custom:
+  instagram:
+    client-id: ${INSTAGRAM_CLIENT_ID}
+    client-secret: ${INSTAGRAM_CLIENT_SECRET}
+    scope: user_profile,user_media
+    authorization-uri: https://api.instagram.com/oauth/authorize
+    api-uri: https://api.instagram.com
+    graph-uri: https://graph.instagram.com
+    redirect_uri: "https://localhost:8443/instagram/callback"
+
+
